@@ -1,6 +1,3 @@
-Here's the updated README with the additional instructions for adding the images and item registration:
-
----
 
 # Usable Minimap and Compass for RedM (RSG Framework)
 
@@ -59,7 +56,3 @@ Config.MountCompass  = false -- set to true if you want to have a compass instea
 
 ## License
 This project is licensed under the MIT License.
-
----
-
-Let me know if you'd like further tweaks!
