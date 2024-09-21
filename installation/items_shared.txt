@@ -1,0 +1,4 @@
+-- put this on rsg-core > shared > items.lua    
+    
+    ['compass']            = {['name'] = 'compass',            ['label'] = 'Compass',             ['weight'] = 100, ['type'] = 'item', ['image'] = 'compass.png',          ['unique'] = true,  ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'compass'},
+    ['minimap']            = {['name'] = 'minimap',            ['label'] = 'minimap',             ['weight'] = 100, ['type'] = 'item', ['image'] = 'minimap.png',          ['unique'] = true,  ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'minimap'},
