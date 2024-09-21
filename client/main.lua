@@ -1,12 +1,13 @@
 local showMinimap = false
 local showCompass = false
+local player = PlayerPedId();
 
 CreateThread(function()
     while true do
         Wait(0.01*1000)
 
-        local interiorId = GetInteriorFromEntity(cache.ped)
-        local isMounted = IsPedOnMount(cache.ped) or IsPedInAnyVehicle(cache.ped)
+        local interiorId = GetInteriorFromEntity(player)
+        local isMounted = IsPedOnMount(player) or IsPedInAnyVehicle(player)
         
         if isMounted then
             if showMinimap then
