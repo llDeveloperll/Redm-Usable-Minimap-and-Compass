@@ -1,4 +1,6 @@
+Here's the updated README with the additional instructions for adding the images and item registration:
 
+---
 
 # Usable Minimap and Compass for RedM (RSG Framework)
 
@@ -11,9 +13,10 @@ This mod converts the minimap and compass into usable in-game items. Players can
 - Seamless integration with the RedM framework.
 
 ## Requirements
-- RedM
 - RSG Framework
-- **Note**: If you're using the **RSG HUD** mod, follow the instructions below to prevent conflicts.
+- RSG HUD (with configuration adjustments, see below)
+- RSG Inventory
+- RSG Core
 
 ## Installation
 1. Download the mod files from the repository.
@@ -24,23 +27,39 @@ This mod converts the minimap and compass into usable in-game items. Players can
    ```
 4. Restart your server.
 
-## RSG HUD Configuration
-If you are using the **RSG HUD** mod, you'll need to disable certain settings in its `config.lua` file to avoid conflicts with this mod. The **RSG HUD** modifies the minimap and compass, which may overwrite the functionality of this script.
+## Additional Installation Steps
+1. **Images for Inventory**  
+   In the `installation` folder, you will find two images (`compass.png` and `minimap.png`).  
+   - Copy these images and paste them into the `rsg-inventory > html > images` directory.  
+   These icons will appear in the player’s inventory when they possess the items.
 
-Open the `config.lua` file of **RSG HUD** and set the following options as shown:
+2. **Registering the Items in RSG Core**  
+   In the `installation` folder, there is a file called `items_shared.txt` with the following item registration lines:
+   
+   ```lua
+   ['compass'] = {['name'] = 'compass', ['label'] = 'Compass', ['weight'] = 100, ['type'] = 'item', ['image'] = 'compass.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'A handy compass for navigation.'},
+   ['minimap'] = {['name'] = 'minimap', ['label'] = 'Minimap', ['weight'] = 100, ['type'] = 'item', ['image'] = 'minimap.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'A useful minimap for quick navigation.'},
+   ```
+
+   - Add these lines to the `rsg-core > shared > items.lua` file to register the compass and minimap items in the framework.
+
+## RSG HUD Configuration
+If you're using the **RSG HUD** mod, you'll need to disable specific settings in its `config.lua` file to avoid conflicts:
 
 ```lua
 Config.OnFootMinimap = false -- set to true/false to disable/enable minimap when on foot
 Config.OnFootCompass = false -- true = have the minimap set to a compass instead of off or normal minimap
-Config.MounttMinimap = false  -- set to false if you want to disable the minimap when on mount
+Config.MountMinimap = false  -- set to false if you want to disable the minimap when on mount
 Config.MountCompass  = false -- set to true if you want to have a compass instead of normal minimap while on a mount
 ```
 
-This ensures that **RSG HUD** doesn't interfere with the minimap and compass toggling mechanics of this mod.
-
 ## Usage
-- To use the minimap or compass, open your inventory and equip the respective item.
-- Unequipping the item will hide the minimap or compass from the screen.
+- Equip the compass or minimap from your inventory to toggle their visibility.
+- Unequip to hide the minimap or compass from the screen.
 
 ## License
 This project is licensed under the MIT License.
+
+---
+
+Let me know if you'd like further tweaks!
