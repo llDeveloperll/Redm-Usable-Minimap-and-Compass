@@ -7,16 +7,14 @@ version '0.1'
 
 server_scripts {
     'server/*.lua',
-    '@oxmysql/lib/MySQL.lua'
 }
 
 shared_scripts {
     'config.lua',
-    '@ox_lib/init.lua',
 }
 
 client_scripts {
-    'client/*.lua'
+    'client/*.lua',
 }
 
 dependency 'rsg-core'
