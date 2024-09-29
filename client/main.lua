@@ -4,7 +4,7 @@ local player = PlayerPedId();
 
 CreateThread(function()
     while true do
-        Wait(0.01*1000)
+        Wait(5*1000)
 
         local interiorId = GetInteriorFromEntity(player)
         local isMounted = IsPedOnMount(player) or IsPedInAnyVehicle(player)
